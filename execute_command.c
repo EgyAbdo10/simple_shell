@@ -1,34 +1,41 @@
 #include "main_header.h"
-
+/**
+ * my_exit - handle he exit command
+ * @exe: the excutable
+ * @argvec: the argument vector for the command line
+ * @n: the nth time to show the prompt
+ * @exit_stat: the exit status of the last command
+ * Return: an indicator whether the exit is set or not
+ */
 int my_exit(char *exe, char **argvec, int n, int *exit_stat)
 {
-    char *err_num;/*to be freed*/
-    char *err_msg;
-    char *err_msg2;
-    if (argvec[1] != NULL)
-    {
-    if (str_to_int(argvec[1]) == -1)
-    {
-    err_num = int_to_str(n);/*to be freed*/
-    err_msg = concat_all(4, exe + 2, ": ", err_num, " exit:");/*to be freed*/
-    err_msg2 = concat_all(4, err_msg, " Illegal number: ", argvec[1], "\n");/*to be freed*/
-    write(STDERR_FILENO, err_msg2, my_strlen(err_msg2));
-    free(err_num);
-    free(err_msg);
-    free(err_msg2);
-    *exit_stat = 2;
-    return (0);
-    }
-    }
-    else
-    return (1);
+char *err_num;
+char *err_msg;
+char *err_msg2;
+if (argvec[1] != NULL)
+{
+if (str_to_int(argvec[1]) == -1)
+{
+err_num = int_to_str(n);
+err_msg = concat_all(4, exe + 2, ": ", err_num, ": exit:");
+err_msg2 = concat_all(4, err_msg, " Illegal number: ", argvec[1], "\n");
+write(STDERR_FILENO, err_msg2, my_strlen(err_msg2));
+free(err_num);
+free(err_msg);
+free(err_msg2);
+*exit_stat = 2;
+return (0);
+}
+}
+else
+return (1);
 }
 
 /**
  * my_wait - wait any child process
  * Return: the exit status of the child process
  */
-int my_wait()
+int my_wait(void)
 {
 int status, exit_stat;
 wait(&status);
