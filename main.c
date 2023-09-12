@@ -9,7 +9,7 @@
 int main(int ac, char **av, char **env)
 {
     char *line = NULL, *clr_line = NULL;
-    int my_errno = 0, mode, is_exit, last_status;
+    int my_errno = 0, mode, is_exit = -1, last_status;
     size_t bufsize = 0;
     static int prompt_num = 1;
     while (1)

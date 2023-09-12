@@ -17,7 +17,7 @@ if (argvec[1] != NULL)
 if (str_to_int(argvec[1]) == -1)
 {
 err_num = int_to_str(n);
-err_msg = concat_all(4, exe + 2, ": ", err_num, ": exit:");
+err_msg = concat_all(4, exe, ": ", err_num, ": exit:");
 err_msg2 = concat_all(4, err_msg, " Illegal number: ", argvec[1], "\n");
 write(STDERR_FILENO, err_msg2, my_strlen(err_msg2));
 free(err_num);
@@ -79,7 +79,7 @@ exit_stat = my_wait();
 }
 else if ((com_full_path == NULL) && (*is_ex < 0))
 {
-print_error(exe + 2, argvec[0], n);
+print_error(exe, argvec[0], n);
 exit_stat = 127;
 }
 free_double_ptr(argvec);
