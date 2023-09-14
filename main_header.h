@@ -30,4 +30,5 @@ char *int_to_str(int number);
 void print_error(char *exec_file, char *command, int prompet_num);
 int execute_command(char *clr_line, char *exe, char **env, int n, int *is_ex);
 void print_env(char **argvec, int *ex_st);
+char *handle_comment(char *line);
 #endif
