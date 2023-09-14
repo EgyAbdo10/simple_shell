@@ -14,7 +14,7 @@ for (; env[i] != NULL; i++)
 {
 env_var = my_strdup(env[i]);
 var_name = strtok(env_var, "=");
-if (my_strncmp(env_var, var, my_strlen(env_var)) == 1)
+if (my_strncmp(var_name, var, my_strlen(var_name)) == 1)
 {
 free(env_var);
 return (my_strchr(env[i], '=') + 1);

@@ -19,10 +19,15 @@ return (num * power(num, exp - 1));
  */
 int str_to_int(char *str)
 {
-int number = 0, i, digit;
+int number = 0, i, digit, is_neg = 0;
 int len;
 if (str == NULL)
 return (-1);
+if (str[0] == '-')
+{
+str += 1;
+is_neg = 1;
+}
 len = my_strlen(str);
 for (i = 0; str[i] != '\0'; i++, len--)
 {
@@ -36,6 +41,7 @@ else
 return (-1);
 }
 }
+if (is_neg) number *= -1;
 return (number);
 }
 /**

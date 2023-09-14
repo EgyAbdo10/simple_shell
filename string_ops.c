@@ -49,10 +49,7 @@ for (i = 0; str[i] != '\0'; i++)
 if (str[i] == chr)
 return (str + i);
 }
-if (str[i] == '\0')
-{
 return (NULL);
-}
 }
 /**
  * my_strncmp - compare first n characters of two strings
