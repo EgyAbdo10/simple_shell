@@ -3,6 +3,7 @@
  * print_error - print a shell error message
  * @exec_file: the executable
  * @command: the invalid command
+ * @prompet_num: the prompt number
  */
 void print_error(char *exec_file, char *command, int prompet_num)
 {

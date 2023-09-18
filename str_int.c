@@ -41,7 +41,8 @@ else
 return (-1);
 }
 }
-if (is_neg) number *= -1;
+if (is_neg)
+number *= -1;
 return (number);
 }
 /**

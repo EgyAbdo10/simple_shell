@@ -21,7 +21,8 @@ write(STDOUT_FILENO, "$ ", 2);
 if (getline(&line, &bufsize, stdin) == -1)
 {
 free(line);
-if (mode == 1) write(STDOUT_FILENO, "\n", 1);
+if (mode == 1)
+write(STDOUT_FILENO, "\n", 1);
 exit(my_errno);
 }
 line[my_strlen(line) - 1] = '\0';
@@ -32,8 +33,10 @@ if (clr_line != NULL)
 my_errno = execute_command(clr_line, av[0], env, prompt_num, &is_exit);
 free(line);
 free(no_com_line);
-if (is_exit == 1) exit(last_status);
-if (is_exit == 2) exit(my_errno);
+if (is_exit == 1)
+exit(last_status);
+if (is_exit == 2)
+exit(my_errno);
 line = NULL;
 prompt_num++;
 }
